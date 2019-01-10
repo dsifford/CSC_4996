@@ -1,7 +1,8 @@
 version: "3.7"
 services:
   web:
-    image: php:7.3-apache
+    build:
+      context: .
     depends_on:
       - db
     ports:
@@ -11,6 +12,7 @@ services:
 
   db:
     image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
