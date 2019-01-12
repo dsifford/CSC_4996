@@ -1,0 +1,8 @@
+@startuml
+
+User -> Backend : Send request to toggle todo
+Backend -> Database : Update todo item status
+Database -> Backend : SQL Response
+Backend -> User : Send updated todos
+
+@enduml

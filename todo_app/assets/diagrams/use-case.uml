@@ -1,0 +1,15 @@
+@startuml
+
+left to right direction
+skinparam PackageStyle rectangle
+
+actor User as u
+
+rectangle Application {
+    u -- (Add Todo)
+    u -- (Delete Todo)
+    u -- (Toggle Todo)
+    u -- (Filter Todos)
+}
+
+@enduml

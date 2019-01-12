@@ -1,0 +1,8 @@
+@startuml
+
+User -> Backend : Send request to delete todo
+Backend -> Database : Update todo status to "deleted"
+Database -> Backend : SQL Response
+Backend -> User : Send updated todos
+
+@enduml

@@ -1,0 +1,10 @@
+
+digraph G {
+    user [label=User shape=box]
+    backend [label=Backend shape=box style=rounded]
+    db [label=Database shape=box style=rounded]
+
+    user -> backend [label="token-based request"]
+    backend -> user [label="changes"]
+    backend -> db [label="saves changes"]
+}

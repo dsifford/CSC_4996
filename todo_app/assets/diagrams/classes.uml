@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Actions {
+    +const string ADD_TODO
+    +const string CLEAR_COMPLETED
+    +const string DELETE_TODO
+    +const string TOGGLE_TODO
+}
+
+class Database {
+    -const string HOST
+    -const string DB_NAME
+    -const string USER
+    -const string PASSWORD
+
+    -PDO $db
+
+    +add_todo(string $todo): void
+    +clear_completed(): void
+    +delete_todo(int $id): void
+    +get_todos(string? $status): array
+    +toggle_todo(int $id): void
+}
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+
+User -> Backend : Submit new todo item
+Backend -> Database : Save todo item
+Database -> Backend : SQL Response
+Backend -> User : Send updated todos
+
+@enduml

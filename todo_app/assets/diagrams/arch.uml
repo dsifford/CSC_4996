@@ -1,0 +1,21 @@
+@startuml
+
+!define SPRITESURL https://raw.githubusercontent.com/rabelenda/cicon-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/apache.puml
+!includeurl SPRITESURL/php.puml
+!includeurl SPRITESURL/mysql.puml
+
+cloud "Private Bridge Network" {
+    frame Database as db {
+        database "<$mysql>\nMySQL 8" as mysql
+    }
+
+    frame Web as web {
+        rectangle "<$php>\nPHP 7.3" as php
+        rectangle "<$apache>\nApache" as apache
+        php - apache
+        php --> mysql : PDO MySQL Driver
+    }
+}
+
+@enduml
